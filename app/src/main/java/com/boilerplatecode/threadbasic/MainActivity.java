@@ -1,33 +1,22 @@
 package com.boilerplatecode.threadbasic;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-///TODO nastaviti iz coding in flow videao od 8:00 minute
-public class MainActivity extends AppCompatActivity {
-private TextView tv;
-private Button btnStart, btnStop;
-private int inn=0;
 
-private Handler newHandler = new Handler();
+public class MainActivity extends AppCompatActivity {
+private Button btnStart, btnStop;
+
 private volatile boolean stopThread=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tv=findViewById(R.id.tv);
-
-
         btnStart = findViewById(R.id.buttonStart);
         btnStop = findViewById(R.id.buttonStop);
-
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
